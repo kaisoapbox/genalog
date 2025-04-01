@@ -8,20 +8,31 @@ Genalog is an open source, cross-platform python package for **gen**erating docu
 
 This repo is now in maintenance mode with **limited support**.
 
-Overview
--------------------------------------
-Genalog has various capabilities: 
+## Overview
+
+Genalog has various capabilities:
 
 1. Flexible format Image Generation
 1. Custom image degradation
 1. Extract Text from Images using Cognitive Search Pipeline
-1. Get OCR Performance Metrics 
+1. Get OCR Performance Metrics
 
-The aim of this project is to provide a complete solution for generating synthetic images from any text data rich in natural language and to imitate most of OCR noises founded in scanned text documents. 
+The aim of this project is to provide a complete solution for generating synthetic images from any text data rich in natural language and to imitate most of OCR noises founded in scanned text documents.
 
 Please refer to our [Genalog documentation](https://microsoft.github.io/genalog) for more tutorials.
 
+## Quickstart
+
+This creates a new `conda` environment with Python 3.13 and all the `weasyprint` dependencies already bundled in. We then use pip to install all the files from the `requirements.txt`, followed by a PDF export tool such as `pypdfium2`.
+
+```bash
+conda create python=3.13 weasyprint -n genalog
+pip install -r requirements.txt
+pip install pypdfium2
+```
+
 ## Installation
+
 See the [Genalog install guide](https://microsoft.github.io/genalog/installation.html) for more details.
 
 To install the latest release:
@@ -29,6 +40,7 @@ To install the latest release:
 `pip install genalog`
 
 ### Extra Installation Steps in MacOs and Windows
+
 We have a dependency on [`Weasyprint`](https://weasyprint.readthedocs.io/en/stable/install.html), which in turn has non-python dependencies including `Pango`, `cairo` and `GDK-PixBuf` that need to be installed separately.
 
 So far, `Pango`, `cairo` and `GDK-PixBuf` libraries are available in `Ubuntu-18.04` and later by default.
@@ -42,12 +54,12 @@ If you are running on Windows, MacOS, or other Linux distributions, please see [
 The following is a summary of the common applications scenarios of Genalog. Please refer the [Jupyter notebook examples](https://github.com/microsoft/genalog/blob/master/example) that make use of the core code base of Genalog and repository utilities.
 
 ### TLDR
+
 If you are interested in a full document generation and degration pipeline, please see the following notebook:
 
-||Description|Indepth Jupyter Notebook Examples|
-|-|-------------------------|--------|
-|1|Analog Document Generation Pipeline|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/generation_pipeline.ipynb)|[Here is guide to the core components](https://github.com/microsoft/genalog/blob/master/genalog/README.md)|
-
+|     | Description                         | Indepth Jupyter Notebook Examples                                                                   |
+| --- | ----------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1   | Analog Document Generation Pipeline | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/generation_pipeline.ipynb) | [Here is guide to the core components](https://github.com/microsoft/genalog/blob/master/genalog/README.md) |
 
 Else we have in-depth walkthroughs of each of the module in Genalog.
 
@@ -55,13 +67,13 @@ Else we have in-depth walkthroughs of each of the module in Genalog.
   <img src="https://github.com/microsoft/genalog/blob/main/example/static/genalog_components.png?raw=true" width="900" />
 </p>
 
-||Steps|Indepth Jupyter Notebook Examples|Quick Start Guides|
-|-|-------------------------|--------|--------|
-|1|Create Template for Image Generation|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/document_generation.ipynb)|[Here is our guide to Document Generation](https://github.com/microsoft/genalog/blob/master/genalog/generation/README.md)|
-|2|Degrade Prebuilt Images|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/document_degradation.ipynb)|[Here is our guide to Image Degradation](https://github.com/microsoft/genalog/blob/master/genalog/degradation/README.md)|
-|3|Get Text From Images Using OCR|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/ocr_extraction.ipynb)|[Here is our guide to Extracting Text](https://github.com/microsoft/genalog/blob/master/genalog/ocr/README.md)|
-|4|Align Text Produced from OCR with Ground Truth Text|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/text_alignment.ipynb)|[Here is our guide to Text Alignment](https://github.com/microsoft/genalog/blob/master/genalog/text/README.md)|
-|5|NER Label Propagation from Ground Truth to OCR Tokens|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/ocr_label_propagation.ipynb)|[Here is our guide to Label Propagation](https://github.com/microsoft/genalog/blob/master/genalog/text/README.md)|
+|     | Steps                                                 | Indepth Jupyter Notebook Examples                                                                     | Quick Start Guides                                                                                                        |
+| --- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Create Template for Image Generation                  | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/document_generation.ipynb)   | [Here is our guide to Document Generation](https://github.com/microsoft/genalog/blob/master/genalog/generation/README.md) |
+| 2   | Degrade Prebuilt Images                               | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/document_degradation.ipynb)  | [Here is our guide to Image Degradation](https://github.com/microsoft/genalog/blob/master/genalog/degradation/README.md)  |
+| 3   | Get Text From Images Using OCR                        | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/ocr_extraction.ipynb)        | [Here is our guide to Extracting Text](https://github.com/microsoft/genalog/blob/master/genalog/ocr/README.md)            |
+| 4   | Align Text Produced from OCR with Ground Truth Text   | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/text_alignment.ipynb)        | [Here is our guide to Text Alignment](https://github.com/microsoft/genalog/blob/master/genalog/text/README.md)            |
+| 5   | NER Label Propagation from Ground Truth to OCR Tokens | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/ocr_label_propagation.ipynb) | [Here is our guide to Label Propagation](https://github.com/microsoft/genalog/blob/master/genalog/text/README.md)         |
 
 We also provide notebooks for the complete end-to-end scenario of generating a synthetic dataset connecting all the components of genalog:
 
@@ -69,26 +81,25 @@ We also provide notebooks for the complete end-to-end scenario of generating a s
   <img src="https://github.com/microsoft/genalog/blob/main/example/static/labeled_synthetic_pipeline.png?raw=true" width="900" />
 </p>
 
-||Scenario|Indepth Jupyter Notebook|
-|-|-------------------------|--------|
-|1|Synthetic Dataset Generation with LABELED NER Dataset|[Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/dataset_generation.ipynb)|
-
+|     | Scenario                                              | Indepth Jupyter Notebook                                                                           |
+| --- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| 1   | Synthetic Dataset Generation with LABELED NER Dataset | [Demo Notebook](https://github.com/microsoft/genalog/blob/master/example/dataset_generation.ipynb) |
 
 ### Other Requirements:
 
-1. If you want to use the OCR Capabilities of Azure to Extract Text from the Images You'll require the following resources: 
-    1. Azure Cognitive Search Service [Quickstart Guide Here](https://docs.microsoft.com/en-us/azure/search/search-create-service-portal)
-    1. Azure Blob Storage [Quickstart Guide Here](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-create-account-block-blob?tabs=azure-portal)
-    
-    See [Azure Docs](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search) for more information on Azure Cognitive Search.
+1. If you want to use the OCR Capabilities of Azure to Extract Text from the Images You'll require the following resources:
 
+   1. Azure Cognitive Search Service [Quickstart Guide Here](https://docs.microsoft.com/en-us/azure/search/search-create-service-portal)
+   1. Azure Blob Storage [Quickstart Guide Here](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-create-account-block-blob?tabs=azure-portal)
 
-Package Release
--------------------
+   See [Azure Docs](https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search) for more information on Azure Cognitive Search.
+
+## Package Release
+
 Please see [RELEASE.md](https://github.com/microsoft/genalog/blob/main/RELEASE.md) for more details on the release process.
 
-Development with the Repo
---------------------------
+## Development with the Repo
+
 We use [tox](https://tox.readthedocs.io/en/latest/index.html) to orchestrate most of the CI procedure. This will ensure the maximum environment parity between local dev boxes and remote CI pipelines.
 
 1. `git clone https://github.com/microsoft/genalog.git`
@@ -96,33 +107,31 @@ We use [tox](https://tox.readthedocs.io/en/latest/index.html) to orchestrate mos
 3. To run static analysis: `tox -e flake8`
 4. To run the test suites: `tox -e -- -m "not azure"`
 
-Repo Structure
--------------------
+## Repo Structure
+
     genalog
     ├────genalog
     │       ├─── generation                      # generate text images
     │       ├──── degradation                    # methods for image degradation
     │       ├──── ocr                            # running the Azure Search Pipeline
-    │       └──── text                           # methods to Align OCR Output Text with 
+    │       └──── text                           # methods to Align OCR Output Text with
     ├────devops                                  # CI/CD pipelines
     ├────docs                                    # containing online documentaions
-    ├────examples                                # example Jupyter Notebooks for Various 
+    ├────examples                                # example Jupyter Notebooks for Various
     ├────tests                                   # tests
     ├────tox.ini                                 # CI orchestration and configurations
     ├────README.md
     └────LICENSE
 
-Trademark Notice
---------------------
+## Trademark Notice
+
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft’s Trademark & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party’s policies.
 
-Microsoft Open Source Code of Conduct
--------------------------------------
+## Microsoft Open Source Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-Contribution Guidelines
--------------------------------------
+## Contribution Guidelines
 
 This project welcomes contributions and suggestions. Most contributions require you to
 agree to a Contributor License Agreement (CLA) declaring that you have the right to,
@@ -137,8 +146,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
 or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-Citing `genalog`
--------------------------------------
+## Citing `genalog`
+
 If you find `genalog` helpful to your work, please consider citing our tool and [paper](https://arxiv.org/abs/2108.02899) using the following BibTeX entry:
 
 ```
@@ -151,6 +160,6 @@ If you find `genalog` helpful to your work, please consider citing our tool and 
 }
 ```
 
-Collaborators
--------------------------------------
+## Collaborators
+
 Genalog was originally developed by the [MAIDAP team at Microsoft Cambridge NERD](http://www.microsoftnewengland.com/nerd-ai/) in association with the Text Analytics Team in Redmond.

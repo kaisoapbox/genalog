@@ -1,6 +1,9 @@
 # Test output
 test_out
 
+# MacOS
+.DS_Store
+
 # Secrets, keys and other credentials
 .secret*
 .cred*

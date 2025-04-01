@@ -9,6 +9,8 @@ tqdm
 Jinja2==2.11.1
 WeasyPrint
 matplotlib
+opencv-python
+MarkupSafe==2.0.1
 scikit-image
 pandas
 aiofiles
